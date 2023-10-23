@@ -3,6 +3,7 @@ const tbody = document.querySelector('tbody')
 const sTitulo = document.querySelector('#m-titulo')
 const sAutor = document.querySelector('#m-autor')
 const sLancamento = document.querySelector('#m-lancamento')
+const sEditora = document.querySelector('#m-editora')
 const btnSalvar = document.querySelector('#btnSalvar')
 
 let itens
@@ -21,11 +22,13 @@ function openModal(edit = false, index = 0) {
     sTitulo.value = itens[index].titulo
     sAutor.value = itens[index].autor
     sLancamento.value = itens[index].lancamento
+    sEditora.value = itens[index].editora
     id = index
   } else {
     sTitulo.value = ''
     sAutor.value = ''
     sLancamento.value = ''
+    sEditora.value = ''
   }
   
 }
@@ -48,6 +51,7 @@ function insertItem(item, index) {
     <td>${item.titulo}</td>
     <td>${item.autor}</td>
     <td>${item.lancamento}</td>
+    <td>${item.editora}</td>
     <td class="acao">
       <button onclick="editItem(${index})"><i class='bx bx-edit' ></i></button>
     </td>
@@ -60,7 +64,7 @@ function insertItem(item, index) {
 
 btnSalvar.onclick = e => {
   
-  if (sTitulo.value == '' || sAutor.value == '' || sLancamento.value == '') {
+  if (sTitulo.value == '' || sAutor.value == '' || sLancamento.value == '' || sEditora.value == '') {
     return
   }
 
@@ -70,8 +74,9 @@ btnSalvar.onclick = e => {
     itens[id].titulo = sTitulo.value
     itens[id].autor = sAutor.value
     itens[id].lancamento = sLancamento.value
+    itens[id].editora = sEditora.value
   } else {
-    itens.push({'titulo': sTitulo.value, 'autor': sAutor.value, 'lancamento': sLancamento.value})
+    itens.push({'titulo': sTitulo.value, 'autor': sAutor.value, 'lancamento': sLancamento.value, 'editora': sEditora.value})
   }
 
   setItensBD()
