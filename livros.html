@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <link rel="stylesheet" type="text/css" href="assets/css/livros.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
     <header class="cabecalho">
@@ -20,7 +21,46 @@
         </nav>
     </header>
     <main>
+        <h1 class="main-titulo">Cadastro de Livros</h1>
+        <div class="container">
+            <div class="header">
+              <button onclick="openModal()" id="new"><i class="bi bi-file-earmark-plus"></i>Novo</i></button>
+            </div>
         
+            <div class="divTable">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Título</th>
+                    <th>Autor</th>
+                    <th>Lançamento</th>
+                    <th class="acao">Editar</th>
+                    <th class="acao">Excluir</th>
+                  </tr>
+                </thead>
+                <tbody>
+                </tbody>
+              </table>
+            </div>
+        
+            <div class="modal-container">
+              <div class="modal">
+                <form autocomplete="off">
+                  <label for="m-titulo">Título</label>
+                  <input id="m-titulo" type="text" required placeholder="Título do livro"/>
+          
+                  <label for="m-autor">Autor</label>
+                  <input id="m-autor" type="text" required placeholder="Autor do livro"/>
+          
+                  <label for="m-lancamento">Lançamento</label>
+                  <input id="m-lancamento" type="date" required placeholder="Data de lançamento do livro"/>
+                  <button id="btnSalvar">Salvar</button>
+                </form>
+              </div>
+            </div>
+        
+          </div>
+          
     </main>
     <footer class="rodape">
         <div class="rodape-conteudo">
@@ -31,5 +71,6 @@
             <a class="link" href="#"><i class="bi bi-github"></i>Larissa</a>
         </div>
     </footer>
+    <script src="assets/js/livros.js"></script>
 </body>
 </html>

@@ -3,6 +3,7 @@
 .conteudo {
     margin-bottom: 48px;
     border-top: 0.4px solid #2c2c2c;
+    flex: 1 1 0;
 }
 
 .conteudo-principal {
