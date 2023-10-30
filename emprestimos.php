@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Site para moderação de usúarios, livros e empréstimos para sua biblioteca virtual">
-    <title>DreamsLibrary - Livros</title>
+    <title>DreamsLibrary - Empréstimos</title>
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/livros.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/emprestimos.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 </head>
@@ -21,17 +21,17 @@
         </nav>
     </header>
     <main>
-        <h2 class="main-titulo">Cadastro de Livros</h2>
-        <a class="btn btn-primary" href="/TCC-NOVOTEC/criarl.php" role="button"><i class="bi bi-file-earmark-plus"></i>Novo</a>
+        <h2 class="main-titulo">Cadastro de Empréstimos</h2>
+        <a class="btn btn-primary" href="/TCC-NOVOTEC/criarE.php" role="button"><i class="bi bi-file-earmark-plus"></i>Novo</a>
         <br/>
 
         <table class="table table-hover w-75">
           <thead>
             <tr>
-              <th>Título</th>
-              <th>Autor</th>
-              <th>Data de Lanç</th>
-              <th>Editora</th>
+              <th>Usuário</th>
+              <th>Livro</th>
+              <th>Retirado em</th>
+              <th>Data de Ven</th>
               <th></th>
             </tr>
           </thead>
@@ -50,7 +50,7 @@
                 die("Connection failed: " . $connection->connect_error);
             }
 
-            $sql = "SELECT * FROM livros";
+            $sql = "SELECT * FROM emprestimos";
             $result = $connection->query($sql);
 
             if (!$result) {
@@ -60,13 +60,13 @@
             while($row = $result->fetch_assoc()) {
               echo "
               <tr>
-                  <td>$row[titulo]</td>
-                  <td>$row[autor]</td>
-                  <td>$row[data_lan]</td>
-                  <td>$row[editora]</td>
+                  <td>$row[usuario]</td>
+                  <td>$row[livro]</td>
+                  <td>$row[retirado]</td>
+                  <td>$row[venc]</td>
                   <td>
-                      <a class='btn btn-secondary btn-sm' href='/TCC-NOVOTEC/editLivro.php?id=$row[id]'><i class='bi bi-pencil-square'></i>Editar</a>
-                      <a class='btn btn-danger btn-sm' href='/TCC-NOVOTEC/deleteLivro.php?id=$row[id]'><i class='bi bi-trash3'></i>Excluir</a>
+                      <a class='btn btn-secondary btn-sm' href='/TCC-NOVOTEC/editEmp.php?id=$row[id]'><i class='bi bi-pencil-square'></i>Editar</a>
+                      <a class='btn btn-danger btn-sm' href='/TCC-NOVOTEC/deleteEmp.php?id=$row[id]'><i class='bi bi-trash3'></i>Excluir</a>
                   </td>
               </tr>
               ";

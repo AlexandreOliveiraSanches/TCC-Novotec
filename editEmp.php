@@ -7,31 +7,56 @@ $database = "dreamslibrary";
 
 $connection = new mysqli($servername, $username, $password, $database);
 
-$titulo = "";
-$autor = "";
-$data_lan = "";
-$editora = "";
+$id = "";
+$usuario = "";
+$livro = "";
+$retirado = "";
+$venc = "";
 
 $errorMessage = "";
 $successMessage = "";
 
+if ( $_SERVER['REQUEST_METHOD'] == 'GET' ) {
 
-if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
-    $titulo = $_POST["titulo"];
-    $autor = $_POST["autor"];
-    $data_lan = $_POST["data_lan"];
-    $editora = $_POST["editora"];
+    if ( !isset($_GET["id"]) ) {
+        header("location: /TCC-NOVOTEC/emprestimos.php");
+        exit;
+    }
+
+    $id = $_GET["id"];
+
+    $sql = "SELECT * FROM emprestimos WHERE id=$id";
+    $result = $connection->query($sql);
+    $row = $result->fetch_assoc();
+
+    if (!$row) {
+        header("location: /TCC-NOVOTEC/emprestimos.php");
+        exit;
+    }
+
+    $usuario = $row["usuario"];
+    $livro = $row["livro"];
+    $retirado = $row["retirado"];
+    $venc = $row["venc"];
+
+}
+else {
+    $id = $_POST["id"];
+    $usuario = $_POST["usuario"];
+    $livro = $_POST["livro"];
+    $retirado = $_POST["retirado"];
+    $venc = $_POST["venc"];
 
     do {
-        if ( empty($titulo) || empty($autor) || empty($data_lan) || empty($editora) ) {
+        if ( empty($id) || empty($usuario) || empty($livro) || empty($retirado) || empty($venc) ) {
             $errorMessage = "Todos os campos são obrigatórios";
             break;
         }
 
-        //add um novo livro no banco de dados
+        $sql = "UPDATE emprestimos " .
+                "SET usurio = '$usuario', livro = '$livro', retirado = '$retirado', venc = '$venc' " .
+                "WHERE id = $id";
 
-        $sql = "INSERT INTO livros (titulo, autor, data_lan, editora) " .
-                "VALUES ('$titulo', '$autor', '$data_lan', '$editora')";
         $result = $connection->query($sql);
 
         if (!$result) {
@@ -39,17 +64,12 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
             break;
         }
 
-        $titulo = "";
-        $autor = "";
-        $data_lan = "";
-        $editora = "";
-
-        $successMessage = "Livro registrado com sucesso";
-
-        header("location: /TCC-NOVOTEC/livros.php");
+        $successMessage = "Empréstimo atualizado com sucesso";
+        header("location: /TCC-NOVOTEC/emprestimos.php");
         exit;
 
     } while (false);
+
 }
 ?>
 
@@ -59,9 +79,9 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Site para moderação de usúarios, livros e empréstimos para sua biblioteca virtual">
-    <title>DreamsLibrary - Criar Livros</title>
+    <title>DreamsLibrary - Editar Empréstimo</title>
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/livros.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/emprestimos.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
@@ -78,7 +98,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
     </header>
     <main>
         <div class="container my-5">
-            <h2>Registrar Livro</h2>
+            <h2>Editar Empréstimo</h2>
 
             <?php
             if ( !empty($errorMessage) ) {
@@ -92,28 +112,29 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
             ?>
 
             <form method="post">
+                <input type="hidden" name="id" value="<?php echo $id; ?>">
                 <div class="row mb-3">
-                    <label class="col-sm-3 col-form-label">Título</label>
+                    <label class="col-sm-3 col-form-label">Usuário</label>
                     <div class="col-sm-6">
-                        <input type="text" class="form-control" name="titulo" value="<?php echo $titulo; ?>">
+                        <input type="text" class="form-control" name="usuario" value="<?php echo $usuario; ?>">
                     </div>
                 </div>
                 <div class="row mb-3">
-                    <label class="col-sm-3 col-form-label">Autor</label>
+                    <label class="col-sm-3 col-form-label">Livro</label>
                     <div class="col-sm-6">
-                        <input type="text" class="form-control" name="autor" value="<?php echo $autor; ?>">
+                        <input type="text" class="form-control" name="livro" value="<?php echo $livro; ?>">
                     </div>
                 </div>
                 <div class="row mb-3">
-                    <label class="col-sm-3 col-form-label">Data de Lançamento</label>
+                    <label class="col-sm-3 col-form-label">Retirado em</label>
                     <div class="col-sm-6">
-                        <input type="date" class="form-control" name="data_lan" value="<?php echo $data_lan; ?>">
+                        <input type="date" class="form-control" name="retirado" value="<?php echo $retirado ?>">
                     </div>
                 </div>
                 <div class="row mb-3">
-                    <label class="col-sm-3 col-form-label">Editora</label>
+                    <label class="col-sm-3 col-form-label">Data de Ven</label>
                     <div class="col-sm-6">
-                        <input type="text" class="form-control" name="editora" value="<?php echo $editora; ?>">
+                        <input type="date" class="form-control" name="venc" value="<?php echo $venc; ?>">
                     </div>
                 </div>
 
@@ -137,7 +158,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
                         <button type="submit" class="btn btn-primary">Enviar</button>
                     </div>
                     <div class="col-sm-3 d-grid">
-                        <a class="btn btn-outline-primary" href="/TCC-NOVOTEC/livros.php" role="button">Cancelar</a>
+                        <a class="btn btn-outline-primary" href="/TCC-NOVOTEC/emprestimos.php" role="button">Cancelar</a>
                     </div>
                 </div>
 
