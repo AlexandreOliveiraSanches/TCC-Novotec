@@ -102,3 +102,9 @@ td {
     font-family: 'Sarala', sans-serif;
 }
 
+
+#alert {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

@@ -83,7 +83,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
             <?php
             if ( !empty($errorMessage) ) {
                 echo "
-                <div class='alert alert-warning alert-dimissible fade show' role='alert'>
+                <div class='alert alert-warning alert-dimissible fade show' id='alert' role='alert'>
                     <strong>$errorMessage</strong>
                     <button type='burron' class='btn-close' data-bs-dismiss='alert' arial-label='Close'></button>
                 </div>
