@@ -78,7 +78,7 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
     </header>
     <main>
         <div class="container my-5">
-            <h2>Registrar Livro</h2>
+            <h2 class="main-titulo">Registrar Livro</h2>
 
             <?php
             if ( !empty($errorMessage) ) {

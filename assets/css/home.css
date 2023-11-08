@@ -23,36 +23,38 @@
     font-family: 'Righteous', sans-serif;
     font-weight: 400;
     font-size: 64px;
-    color: #2c2c2c;
+    color: #0F1769;
 }
 
 .conteudo-principal-escrito-subtitulo {
     font-family: 'Sarala', sans-serif;
     font-weight: 400;
     font-size: 24px;
-    color: #575757;
+    color: #D1C4CD;
 }
 
-.conteudo-principal-escrito-botao {
-    background-color: #d3789d;
-    color: #FFF2E7;
+#conteudo-principal-escrito-botao {
+    background-color: #0F1769;
+    color: #FFFF;
     width: 180px;
-    height: 60px;
+    height: 40px;
     border: none;
     box-shadow: 4px 5px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 20px;
+    border-radius: 10px;
     font-family: 'Sarala', sans-serif;
     font-weight: 400;
     font-size: 15px;
+    margin: 0;
 }
 
-.conteudo-principal-escrito-botao:hover {
+#conteudo-principal-escrito-botao:hover {
     background-color: rgba(211, 120, 157, 0.72);
+    cursor: pointer;
 }
 
 .conteudo-principal-imagem {
     margin-top: 60px;
-    height: 430px;
+    height: 550px;
 }
 
 .conteudo-secundario {
@@ -61,6 +63,7 @@
     align-items: center;
     gap: 24px;
     margin-top: 48px;
+    margin-bottom: 70px;
 }
 
 .conteudo-secundario-titulo {
@@ -69,7 +72,7 @@
     font-family: 'Righteous', sans-serif;
     font-weight: 400;
     font-size: 24px;
-    color: #2c2c2c;
+    color: #0F1769;
     margin-bottom: 16px;
 }
 
@@ -77,5 +80,61 @@
     font-family: 'Sarala', sans-serif;
     font-weight: 300;
     font-size: 18px;
-    color: #575757;
+    color: #D1C4CD;
 }
+
+.conteudo-terciario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border-top: 0.4px solid #2c2c2c;
+}
+
+.conteudo-terciario-um{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.conteudo-terciario-dois{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin-left: 30px;
+}
+
+.conteudo-terciario-escrito {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin-top: 48px;
+    width: 600px;
+}
+
+.conteudo-terciario-titulo{
+    font-family: 'Righteous', sans-serif;
+    font-weight: 400;
+    font-size: 29px;
+    color: #0F1769;
+    margin-bottom: 8px;
+}
+
+.conteudo-terciario-paragrafo {
+    font-family: 'Sarala', sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    color: #D1C4CD;
+}
+
+.conteudo-terciario-topico {
+    font-family: 'Righteous', sans-serif;
+    font-weight: 330;
+    font-size: 22px;
+    color: #0F1769;
+}
+
+
+

@@ -98,7 +98,7 @@ else {
     </header>
     <main>
         <div class="container my-5">
-            <h2>Editar Usuário</h2>
+            <h2 class="main-titulo">Editar Usuário</h2>
 
             <?php
             if ( !empty($errorMessage) ) {

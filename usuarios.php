@@ -22,7 +22,7 @@
     </header>
     <main>
         <h2 class="main-titulo">Cadastro de Usuários</h2>
-        <a class="btn btn-primary" href="/TCC-NOVOTEC/criarU.php" role="button"><i class="bi bi-file-earmark-plus"></i>Novo</a>
+        <a class="btn" id="btn_edit" href="/TCC-NOVOTEC/criarU.php" role="button"><i class="bi bi-file-earmark-plus"></i>Novo</a>
         <br/>
 
         <table class="table table-hover w-75">

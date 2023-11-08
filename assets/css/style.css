@@ -12,11 +12,11 @@ body {
     display: flex;
     flex-direction: column;
     font-size: 100%;
-    background: linear-gradient(68.15deg, #EFD8EC 16.62%,  #ffdcf0 85.61%);
+    background-color: #FFFF;
 }
 
-a {
-    color: #000;
+main {
+    background-color: #FFFF;
 }
 
 .bi {
@@ -29,6 +29,7 @@ a {
     align-items: center;
     justify-content: space-around;
     padding: 24px;
+    background-color: #EEC2CF;
 }
 
 .cabecalho-logo {
@@ -42,19 +43,21 @@ a {
 
 .cabecalho-menu-item {
     font-family: 'Sarala', sans-serif;
-    color: #252424;
+    color: #0F1769;
     font-weight: 400;
     font-size: 18px;
+    text-decoration: none;
 }
 
 .cabecalho-menu-item:hover {
-    color: #a65075;
+    color: #FFFF;
     text-decoration: underline;
 }
 
 .rodape {
     padding: 32px;
     border-top: 0.4px solid #2c2c2c;
+    background-color: #EEC2CF;
 }
 
 .rodape-conteudo {
@@ -66,10 +69,36 @@ a {
 }
 
 .link {
-    color: #252424;
+    color: #0F1769;
+    text-decoration: none;
 }
 
 .link:hover{
-    color: #a65075;
+    color: #FFFF;
     text-decoration: underline;
 }
+
+.main-titulo {
+    margin-top: 35px;
+    font-family: 'Righteous', sans-serif;
+    font-weight: 400;
+    color: #0F1769;
+}
+
+#btn_edit {
+    background-color: #0F1769;
+    color: #FFFF;
+}
+
+#btn_delete{
+    background-color: #EEC2CF;
+}
+
+th {
+    font-family: 'Righteous', sans-serif;
+}
+
+td {
+    font-family: 'Sarala', sans-serif;
+}
+
