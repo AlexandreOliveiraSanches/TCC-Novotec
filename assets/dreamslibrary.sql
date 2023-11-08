@@ -49,16 +49,6 @@ CREATE TABLE `livros` (
   `editora` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Despejando dados para a tabela `livros`
---
-
-INSERT INTO `livros` (`id`, `titulo`, `autor`, `data_lan`, `editora`) VALUES
-(1, 'Harry Potter ea Pedra Filosofal', 'J.K. Rowling', '1997-07-26', 'Rocco'),
-(2, 'It: A Coisa', 'Stephen King', '2014-07-24', 'Suma'),
-(3, 'Orgulho e Preconceito', 'Jane Austen', '2018-04-12', 'Martin Claret'),
-(4, 'Água Viva', 'Clarice Lispector', '2020-10-16', 'Rocco');
-
 -- --------------------------------------------------------
 
 --
