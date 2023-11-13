@@ -63,14 +63,25 @@ main {
 .rodape-conteudo {
     font-size: 20px;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    flex-direction: row;
+    justify-content: space-evenly;
     margin: 0 auto;
+}
+
+.rodape-conteudo-cri {
+    display: flex;
+    flex-direction: column;
+}
+
+.rodape-conteudo-doc {
+    display: flex;
+    flex-direction: column;
 }
 
 .link {
     color: #2c2c2c;
     text-decoration: none;
+    margin-bottom: 5px;
 }
 
 .link:hover{
