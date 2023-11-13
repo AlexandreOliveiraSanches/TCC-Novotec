@@ -88,7 +88,7 @@ else {
 </head>
 <body>
     <header class="cabecalho">
-        <a href="index.html"><img class="cabecalho-logo" src="assets/images/dreams-removebg-preview.png"></a>
+        <a href="index.html"><img class="cabecalho-logo" src="assets/images/logotipo.png"></a>
         <nav class="cabecalho-menu">
             <a class="cabecalho-menu-item" href="index.html"><i class="bi bi-house-fill"></i>Home</a>
             <a class="cabecalho-menu-item" href="livros.php"><i class="bi bi-book"></i>Livros</a>

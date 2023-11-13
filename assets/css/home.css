@@ -23,7 +23,7 @@
     font-family: 'Righteous', sans-serif;
     font-weight: 400;
     font-size: 64px;
-    color: #0F1769;
+    color: #2c2c2c;
 }
 
 .conteudo-principal-escrito-subtitulo {
@@ -34,7 +34,7 @@
 }
 
 #conteudo-principal-escrito-botao {
-    background-color: #0F1769;
+    background-color: #2c2c2c;
     color: #FFFF;
     width: 180px;
     height: 40px;
@@ -72,7 +72,7 @@
     font-family: 'Righteous', sans-serif;
     font-weight: 400;
     font-size: 24px;
-    color: #0F1769;
+    color: #2c2c2c;
     margin-bottom: 16px;
 }
 
@@ -118,7 +118,7 @@
     font-family: 'Righteous', sans-serif;
     font-weight: 400;
     font-size: 29px;
-    color: #0F1769;
+    color: #2c2c2c;
     margin-bottom: 8px;
 }
 
@@ -133,7 +133,7 @@
     font-family: 'Righteous', sans-serif;
     font-weight: 330;
     font-size: 22px;
-    color: #0F1769;
+    color: #2c2c2c;
 }
 
 
