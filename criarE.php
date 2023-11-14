@@ -147,11 +147,33 @@ if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
     </main>
     <footer class="rodape">
         <div class="rodape-conteudo">
-            <h4 class="cri">Criadores:</h4>
-            <a class="link" href="https://github.com/AlexandreOliveiraSanches"><i class="bi bi-github"></i>Alexandre</a>
-            <a class="link" href="https://github.com/Analauravf"><i class="bi bi-github"></i>Ana Laura</a>
-            <a class="link" href="https://github.com/AnnaJuliaOliveira"><i class="bi bi-github"></i>Anna Julia</a>
-            <a class="link" href="https://github.com/larissamanso"><i class="bi bi-github"></i>Larissa</a>
+            <div class="rodape-conteudo-cri">
+                <h4 class="cri">Criadores:</h4>
+                <a class="link" href="https://github.com/AlexandreOliveiraSanches"><i class="bi bi-github mx-2"></i>Alexandre Oliveira</a>
+                <a class="link" href="https://github.com/Analauravf"><i class="bi bi-github mx-2"></i>Ana Laura Fantatto</a>
+                <a class="link" href="https://github.com/AnnaJuliaOliveira"><i class="bi bi-github mx-2"></i>Anna Julia Oliveira</a>
+                <a class="link" href="https://github.com/larissamanso"><i class="bi bi-github mx-2"></i>Larissa Manço</a>
+            </div>
+            <div class="rodape-conteudo-doc">
+                <h4 class="doc">Documentações</h4>
+                <a class="link" 
+                href="https://seducsp-my.sharepoint.com/:w:/g/personal/00001067463112sp_aluno_educacao_sp_gov_br/ERdBilRI4ntHkHxyd4r3ZDgBbFDAEILxjenuPese9mBizg?e=08bQSD&ovuser=6f9e3b1e-1809-444a-81d3-82d40a928812%2Canna.josantos%40senacsp.edu.br&clickparams=eyJBcHBOYW1lIjoiVGVhbXMtRGVza3RvcCIsIkFwcFZlcnNpb24iOiIyNy8yMzA5MjkxMTIwOCIsIkhhc0ZlZGVyYXRlZFVzZXIiOmZhbHNlfQ%3D%3D">
+                <i class="bi bi-file-earmark-word"></i>Monografia</a>
+                <a class="link" 
+                href="https://www.canva.com/design/DAF0CvR1-es/Bw-bRh2bIo0esvEDZYBXEA/edit">
+                <i class="bi bi-file-earmark-play"></i>Apresentação de Slides</a>
+                <a class="link"
+                href="https://www.figma.com/file/MZQoJd23RnsynIZU91ZFUD/Untitled?type=design&node-id=0%3A1&mode=design&t=vbDK6EqKGd7yvCUw-1">
+                <i class="bi bi-window-sidebar"></i>Figma</a>
+                <a class="link"
+                href="https://lucid.app/lucidchart/54a35dc3-e9e9-43ce-a065-da1bb129791b/edit?viewport_loc=-2860%2C-642%2C2920%2C1497%2C0_0&invitationId=inv_627e874a-27cf-4f47-b423-4146a94b628d">
+                <i class="bi bi-arrows"></i>Fluxograma</a>
+                <a class="link"
+                href="https://lucid.app/lucidchart/1e93f32e-e496-47ef-b300-05974dac1df9/edit?viewport_loc=-1492%2C-1413%2C2164%2C1109%2C0_0&invitationId=inv_1396a9d1-a807-4a61-982a-e1002ab5bf1d">
+                <i class="bi bi-database-fill"></i>Modelagem de Dados</a>
+
+            </div>
+            
         </div>
     </footer>
 </body>
